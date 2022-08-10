@@ -3,22 +3,10 @@
 
 #    # ISM 224 Project:                                        Gilliam Van Der Merwe
 
-# ## Introduction:
-# The purpose of this assignment is to develop a program that is able to retrieve information about a movie given user input. The information retrieved about the movie includes the following information: movie title, year released, age rating, complete release date, runtime, genre, directors, actors, plot, blurred, language, country, awards, link to poster, ratings (metascore, imdb rating, rotten tomatoes), IMDB votes, IMDB ID, type (movie, series, etc), DVD information, box office, production and website address. The information is retrieved from the Open Movie Database (OMDB). The program makes use of the OMDB RESTful API web service in order to access the information.
-# 
-# RESTful API stands for Representational State Transfer Technology Application Programming Interface. RESTful API is a web service that utilises HTTP requests so that it can "retrieve a resource", "change" or "update" the state of the resource, "create" a new resource or "delete" an existing resource (SearchMicroservices, 2019). API, in terms of website usage, is code that allows for communication between two software applications (SearchMicroservices, 2019). The API showcases the appropriate way to communicate with the other application (SearchMicroservices, 2019). In this case the how the movie lookup program communicates with the Open Movie Database. 
-
 # ## Final Code:
-
-# In[ ]:
-
 
 import sys
 get_ipython().system('{sys.executable} -m pip install omdb')
-
-
-# In[16]:
-
 
 # api key = b94319ef
 import omdb
