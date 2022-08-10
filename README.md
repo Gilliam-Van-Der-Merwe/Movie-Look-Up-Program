@@ -1,9 +1,11 @@
 # Movie-Look-Up-Program
 
+# ## Introduction:
+# The purpose of this assignment is to develop a program that is able to retrieve information about a movie given user input. The information retrieved about the movie includes the following information: movie title, year released, age rating, complete release date, runtime, genre, directors, actors, plot, blurred, language, country, awards, link to poster, ratings (metascore, imdb rating, rotten tomatoes), IMDB votes, IMDB ID, type (movie, series, etc), DVD information, box office, production and website address. The information is retrieved from the Open Movie Database (OMDB). The program makes use of the OMDB RESTful API web service in order to access the information.
+# 
+# RESTful API stands for Representational State Transfer Technology Application Programming Interface. RESTful API is a web service that utilises HTTP requests so that it can "retrieve a resource", "change" or "update" the state of the resource, "create" a new resource or "delete" an existing resource (SearchMicroservices, 2019). API, in terms of website usage, is code that allows for communication between two software applications (SearchMicroservices, 2019). The API showcases the appropriate way to communicate with the other application (SearchMicroservices, 2019). In this case the how the movie lookup program communicates with the Open Movie Database. 
+
 # ## Code Explained:
-
-# In[ ]:
-
 
 def check_store_values(dict):
     check_response = ""
@@ -146,8 +148,6 @@ def check_store_values(dict):
 # ### Check_store_values Function Explained:
 # The purpose of this function is to take the dictionary, containing the information about the movie being searched, as a parameter and then being used to find the necessary values to store in variables  by making use of the dictionary's keys. Firslty, the function checks to see if the dictionary key 'response' has a 'true' value and if it does it will check through a group of keys to see if there is information that can be stored in variables and once this is done it will print the informaton in a structured format to the console and this information will also being stored in a temporary variable that will be returned when the function is called. On the other hand if the value of 'response' is 'false' an error message saying that the movie could not be found in the database or was incorrectly entered will be printed to the console.
 
-# In[ ]:
-
 
 if option == '1':
                 try:
@@ -179,8 +179,6 @@ if option == '1':
 # ### Option One:
 # If the variable option has the value '1' then a try except block will execute. Within this block the user is prompted via the console to enter the tilte of the movie they wish to search. In order to determine if the movie is in the database, a request is sent to the omdb via the .request() method and then the .status_code method is used to determine is there is a true reponse from the omdb and if there is the status code will be '200'. If the status code is '200', then the .title() method is used to retrieve the movie information and it will be stored in a dictionary. The function described above previously is then called and executed. After that the the dictionary is then converted to a string and stored in a variable. Thereafter, a try except block is created. Within this block a text file is opened and the variable in which the dictioanry is stored is written to the text file and then it is closed. If the movie is not in the database or is incorrectly entered an error message will be printed to the console.
 
-# In[ ]:
-
 
 elif option == '2':
                 
@@ -195,8 +193,6 @@ elif option == '2':
 # ### Option Two:
 # If the value of option is '2' then code within the elif block will be executed. A temporary variable is given the value of an empty string. As per convention in pyhton if ast.literal_eval() is to be used to evaluate a string variable from a text file in order to convert it to a dictionary it makes use of the with statement in order open the text file, process the content of the text file and then close it. Within the with statement there is a for loop that loops through the strings in text file which is then converted to a dictionary and stored in a variable. Thereafter, the check_store_values() method is executed.
 
-# In[ ]:
-
 
 elif option == '3':    
                 search_title = input("Enter movie title: ")
@@ -208,8 +204,6 @@ elif option == '3':
 
 # ### Option Three:
 # Option three is used when the user wishes to search for a movie that may have the same name as other movies in which case this option is used as it aids the user by allowing for a more specific search. The user is asked to input the title of the movie as well as the year the movie was released. The input is then used as parameters in the .get() method from the omdb API. In this case the user will recieve a full plot of the movie as well as ratings by rotten tomatoes. The information is retrieved and stored as a dictionary thereafter the check_store_values() method is called.
-
-# In[ ]:
 
 
 def search_by_title():
@@ -257,8 +251,6 @@ def search_by_title():
 # ### Search_by_title Function:
 # When the Search By Title button is clicked on the main menu in the GUI mode this function will be executed. Within this function is another function called search. The search function will be called when the search button in the Search by Title window is clicked. This will take the input which the user entered in the entry box and then run simlarly to how Option one in console mode is executed. The differences are that it will be displayed on the canvas of the Search by title window, there is anoother function called clear_text_output() that is called when the clear button is clicked which is also created via the Button() function from the tkinter librabry which is used to create the GUI, and another text file is opened as well in order to store the search queries of the user.
 
-# In[ ]:
-
 
 def prev_search():
             prev_search_window = tkinter.Tk()
@@ -284,8 +276,6 @@ def prev_search():
 
 # ### Prev_search Function:
 # This function is called when the previously searched title button in the main menu of the GUI mode is clicked. It then creates a new window called previously searched title. A canvas is then created with a cyan coloured background. A back button is created which will close the current window. Thereafter the same code as option two from the console mode is executed and displayed on the current window.
-
-# In[ ]:
 
 
 def history():
